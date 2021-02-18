@@ -81,11 +81,12 @@ class Game {
 
     }
 
-    if(keyIsDown(UP_ARROW) && player.index !== null && touches.length > 0){
+    if(touches.length > 0 || keyIsDown(UP_ARROW) && player.index !== null){
       player.distance +=10
       player.update();
       touches = [];
     }
+
 
     if(player.distance > 4500){
       gameState = 2;
